@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block body %}
+	<a class="back-link" href="{{ url_for('showRestaurants') }}">Back to All Restaurants</a>
+	<br>
+	<br>
+
+	<div class="menu-container">
+		<h1 class="menu-name"><span style="text-decoration: underline">{{ restaurant.name }}</span>'s Menu</h1>
+
+		<p class="center">Created by: {{ creator.name }}</p>
+		<img class="center" src="{{ creator.picture }}">
+		<br>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<hr>
+				<ul class="flash">
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+
+		{% if appetizers %}
+		<hr>
+		<h2 class="course">Appetizers</h3>
+
+		{% for item in appetizers %}
+			<div class="menu-item">
+				<div class="name-price">
+					<span class="item-name">{{ item.name }}</span>
+					<span class="item-price">{{ item.price }}</span>
+				</div>
+
+				<p class="item-description">
+					{{ item.description }}
+				</p>
+
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		{% endfor %}
+		{% endif %}
+
+		{%  if entrees %}
+		<hr>
+		<h2 class="course">Entrees</h3>
+
+		{% for item in entrees %}
+			<div class="menu-item">
+				<div class="name-price">
+					<span class="item-name">{{ item.name }}</span>
+					<span class="item-price">{{ item.price }}</span>
+				</div>
+
+				<p class="item-description">
+					{{ item.description }}
+				</p>
+
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		{% endfor %}
+		{% endif %}
+
+		{% if desserts %}
+		<hr>
+		<h2 class="course">Dessert</h3>
+
+		{% for item in desserts %}
+			<div class="menu-item">
+				<div class="name-price">
+					<span class="item-name">{{ item.name }}</span>
+					<span class="item-price">{{ item.price }}</span>
+				</div>
+
+				<p class="item-description">
+					{{ item.description }}
+				</p>
+
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		{% endfor %}
+		{% endif %}
+
+		{% if beverages %}
+		<hr>
+		<h2 class="course">Beverages</h3>
+
+		{% for item in beverages %}
+			<div class="menu-item">
+				<div class="name-price">
+					<span class="item-name">{{ item.name }}</span>
+					<span class="item-price">{{ item.price }}</span>
+				</div>
+
+				<p class="item-description">
+					{{ item.description }}
+				</p>
+
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		{% endfor %}
+		{% endif %}
+	</div>
+
+{% endblock %}

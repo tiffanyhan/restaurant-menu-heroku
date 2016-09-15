@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+<a class="back-link" href="{{ url_for('showMenu', restaurant_id = restaurant_id) }}">Back to Menu</a>
+<div class="form-container">
+	<h2>Edit the information you wish to change for "{{ item.name }}" from <span style="text-decoration: underline">{{ restaurant.name }}</span>'s Menu</h2>
+
+	<div class="error">{{ error }}</div>
+
+	<form method="POST" action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = menu_id) }}" enctype="multipart/form-data">
+		<label>Name:</label>
+		<br>
+		<div></div>
+		<input class="text-input" type="text" name="name" value="{{ item.name }}">
+		<br>
+		<br>
+
+		<label>Price:</label>
+		<br>
+		<div></div>
+		<input class="text-input" type="text" name="price" value="{{ item.price }}">
+		<br>
+		<br>
+
+		<label>Description:</label>
+		<br>
+		<div></div>
+		<textarea name="description">{{ item.description }}</textarea>
+		<br>
+		<br>
+
+		<label>Course:</label>
+		<br>
+		<div></div>
+		<input type="radio" name="course" value="Appetizer" {% if item.course == 'Appetizer' %}checked{% endif %}>
+		<label>Appetizer</label>
+		<br>
+		<input type="radio" name="course" value="Entree" {% if item.course == 'Entree' %}checked{% endif %}>
+		<label>Entree</label>
+		<br>
+		<input type="radio" name="course" value="Dessert" {% if item.course == 'Dessert' %}checked{% endif %}>
+		<label>Dessert</label>
+		<br>
+		<input type="radio" name="course" value="Beverage" {% if item.course == 'Beverage' %}checked{% endif %}>
+		<label>Beverage</label>
+		<br>
+		<br>
+
+		<input class="submit-input" type="submit" value="Edit"> | <a href="{{ url_for('showMenu', restaurant_id = restaurant_id) }}">Cancel</a>
+	</form>
+</div>
+{% endblock %}

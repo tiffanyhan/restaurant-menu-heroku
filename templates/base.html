@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/styles.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<title>Restaurants Menu App</title>
+	</head>
+	<body>
+		<div class="overflow">
+			{% if 'username' in session %}
+			<img class="avatar" src="{{ session.picture }}">
+			<a class="signout-button" href="{{ url_for('disconnect') }}">Sign out</a>
+
+			{% else %}
+			<a class="signin-button" href="{{ url_for('showLogin') }}">Sign In</a>
+			{% endif %}
+
+		</div>
+
+		{% block body %}
+		{% endblock %}
+
+		<script>
+			$('.avatar').click(function() {
+				$('.signout-button').toggleClass('display')
+			});
+
+			$(document).click(function() {
+				if ( (!$(event.target).closest('.avatar').length)
+				&& (!$(event.target).closest('.signout-button').length) ) {
+					if ($('.signout-button').hasClass('display')) {
+						$('.signout-button').removeClass('display')
+
+					}
+				}
+			});
+
+		</script>
+	</body>
+</html>

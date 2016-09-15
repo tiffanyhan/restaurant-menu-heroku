@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+	<h1>Restaurants for Mountain View, CA</h1>
+	<br>
+	<br>
+	<main>
+		<a class="link" href="{{ url_for('newRestaurant') }}">Add a New Restaurant</a>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class="flash">
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+
+		<div class="restaurants">
+		{% for restaurant in restaurants %}
+			<div class="restaurant-item" onclick="location.href='{{ url_for('showMenu', restaurant_id = restaurant.restaurant_id) }}';">
+				<h2 class="restaurant-name">{{ restaurant.name }}</h2>
+			</div>
+			<br>
+		{% endfor %}
+		</div>
+	</main>
+
+{% endblock %}

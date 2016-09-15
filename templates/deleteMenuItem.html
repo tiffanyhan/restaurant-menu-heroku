@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+	<a class="back-link" href="{{ url_for('showMenu', restaurant_id = restaurant_id) }}">Back to Menu</a>
+	<div class="form-container">
+		<h2>Are you sure you want to delete "{{ item.name }}" from <span style="text-decoration: underline">{{ restaurant.name }}</span>'s menu?</h2>
+
+		<div class="error">{{ error }}</div>
+
+		<form method="POST" action="{{ url_for('deleteMenuItem', restaurant_id = restaurant_id, menu_id = menu_id) }}" enctype="multipart/form-data">
+			<input class="submit-input" type="submit" value="Delete"> | <a href="{{ url_for('showMenu', restaurant_id = restaurant_id) }}">Cancel</a>
+		</form>
+	</div>
+{% endblock %}

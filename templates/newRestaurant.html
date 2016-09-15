@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+	<a class="back-link" href="{{ url_for('showRestaurants') }}">Back to All Restaurants</a>
+	<div class="form-container">
+		<h2>Create a New Restaurant</h2>
+		<form method="POST" action="{{ url_for('newRestaurant') }}" enctype="multipart/form-data">
+			<label>Name:</label>
+			<br>
+			<div class="error">{{ error }}</div>
+			<input class="text-input" type="text" name="name" placeholder="New restaurant name">
+			<br>
+			<br>
+			<input class="submit-input" type="submit" value="Create"> | <a href="{{ url_for('showRestaurants') }}">Cancel</a>
+		</form>
+	</div>
+{% endblock %}

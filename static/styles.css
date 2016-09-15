@@ -1,0 +1,172 @@
+body {
+	font-family: sans-serif;
+	position: relative;
+}
+
+h1 {
+	text-align: center;
+}
+
+.error {
+	color: red;
+}
+
+.flash {
+	background-color: pink;
+	list-style-type: none;
+}
+
+.overflow {
+	overflow: auto;
+}
+
+.avatar {
+	width: 35px;
+	height: auto;
+	border-radius: 25px;
+	float: right;
+	margin-right: 10px;
+}
+
+.avatar:hover {
+	opacity: 0.6;
+}
+
+.signin-button,
+.signout-button {
+	height: auto;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.signin-button {
+	background-color: #4b69e8;
+	color: white;
+	padding: 10px;
+	float: right;
+	width: 50px;
+}
+
+.signout-button {
+	width: 75px;
+	background-color: beige;
+	padding: 10px 5px;
+	position: absolute;
+	top: 45px;
+	right: 25px;
+	border: 1px solid black;
+	display: none;
+}
+
+.display {
+	display: inline;
+}
+
+.back-link {
+	position: absolute;
+	top: 10px;
+}
+
+.center {
+	display: block;
+	text-align: center;
+}
+
+/* restaurants page */
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.restaurants {
+	border: 2px solid black;
+	border-radius: 50px;
+}
+
+.restaurant-item {
+	border: 2px solid black;
+	border-radius: 50px;
+	padding: 10px;
+}
+
+.restaurant-item:hover {
+	background-color: lightgrey;
+	color: white;
+	cursor: pointer;
+}
+
+.restaurant-name {
+	text-align: center;
+	font-family: Didot;
+}
+
+/* menu page */
+
+.menu-container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 50px;
+	border: 2px solid black;
+	border-radius: 50px;
+	box-shadow: 10px 10px 10px black;
+	font-family: Didot;
+}
+
+.menu-name {
+	margin-bottom: 10px;
+}
+
+img {
+	width: 150px;
+	height: auto;
+	margin: 10px auto;
+
+}
+
+.course {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.name-price {
+	overflow: auto;
+}
+
+.item-name {
+	float: left;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.item-price {
+	float: right;
+}
+
+/* forms */
+
+.form-container {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 20px;
+	padding: 0 35px;
+}
+
+.text-input {
+	font-size: 20px;
+	padding: 2px;
+	width: 250px;
+}
+
+.submit-input {
+	font-size: 24px;
+}
+
+textarea {
+	font-size: 20px;
+	max-width: 400px;
+	width: 100%;s
+	height: 100px;
+}
