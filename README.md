@@ -1,4 +1,11 @@
-In order to open the restaurant menus page:
+#Public URL: http://vast-castle-88125.herokuapp.com/
+
+##Description:
+  - a restaurant menu page for restaurants around Mountain View, CA
+  - login with Google+ or Facebook in order to create a restaurant menu
+  - logged in users can edit or delete the items they have created
+
+##In order to open the restaurant menus page:
 
 - make sure you have Vagrant and VirtualBox installed on your machine
 - navigate to the project directory in your command line
@@ -19,7 +26,7 @@ In order to open the restaurant menus page:
   loggin in will give you access to the admin view of the
   restaurant menu pages you are the owner of.
 
-JSON Endpoint Info:
+##JSON Endpoint Info:
 
 - to see JSON endpoints for all restaurants,
   navigate to localhost:5000/restaurants/JSON
