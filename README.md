@@ -2,21 +2,18 @@
   - login with Google+ or Facebook in order to create a restaurant menu
   - logged in users can edit or delete the items they have created
 
-## In order to open the restaurant menus page:
+## Getting the app running locally:
 - make sure you have Vagrant and VirtualBox installed on your machine
 - navigate to the project directory in your command line
 - type the command: 'vagrant init' in order to initialize a Vagrant
   environment
 - type the command 'vagrant up' to start the Vagrant environment
 - login to the Vagrant machine using the command: 'vagrant ssh'
-
 - navigate back to the project directory within the new
   Vagrant environment using the commands: 'cd /vagrant'
   and 'cd catalog'
-
 - type command 'python finalproject.py'
 - in a web browser, navigate to localhost:5000
-
 - creators of restaurants can edit and delete restaurants and
   their menu items by logging in via facebook or google.
   loggin in will give you access to the admin view of the
